@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\MessageSentEvent;
+use App\Events\SendPrivateMessageEvent;
 use App\Http\Resources\ChatResourceCollection;
 use App\Http\Resources\MessageResource;
 use App\Models\Chat;
@@ -21,8 +21,9 @@ class ChatController extends Controller
 
     public function index()
     {
-        $chats = (new ChatResourceCollection(auth()->user()->chats, auth()->id()))->jsonSerialize();
-        return view('chats', compact('chats'));
+        $chats = (new ChatResourceCollection(auth()->user()->chats, auth()->id()))
+                    ->jsonSerialize();
+        return inertia('Chats/View', compact('chats'));
     }
 
     public function inviteToChat(Request $request)
@@ -95,9 +96,9 @@ class ChatController extends Controller
             'message' => $request->message
         ]);
 
-        // broadcast(new MessageSentEvent($chat_id, $request->message))->toOthers();
+        // broadcast(new SendPrivateMessageEvent($chat_id, $request->message))->toOthers();
 
-        event(new MessageSentEvent($chat_id, $request->message));
+        event(new SendPrivateMessageEvent($chat_id, $request->message));
 
         return response()->json([
             'status' => 'Message Sent!'

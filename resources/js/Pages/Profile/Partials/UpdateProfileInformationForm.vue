@@ -1,5 +1,4 @@
 <script setup>
-import { ref, onMounted } from "vue";
 import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
@@ -22,7 +21,6 @@ const form = useForm({
     username: user.username,
     email: user.email,
     bio: user.bio ?? "",
-    dp: user.dp,
 });
 
 const csrfToken = document
@@ -130,7 +128,6 @@ const handleAddFile = (error, file) => {
                 <div class="mt-2 w-[200px]">
                     <file-pond
                         id="dp"
-                        ref="dpRef"
                         name="dp"
                         label-idle="Drag & Drop your picture or <span class='filepond--label-action'>Browse</span>"
                         instant-upload="false"
@@ -147,7 +144,7 @@ const handleAddFile = (error, file) => {
                                 },
                             },
                         }"
-                        @addfile="handleAddFile"
+                        @addfile=""
                     />
                 </div>
 

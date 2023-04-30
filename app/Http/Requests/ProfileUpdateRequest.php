@@ -31,12 +31,12 @@ class ProfileUpdateRequest extends FormRequest
         ];
     }
 
-    protected function passedValidation()
-    {
-        if (request()->hasFile('dp')) {
-            $file_name = time() . '_' . request()->file('dp')->getClientOriginalName();
-            $file_path = request()->file('dp')->storeAs('dp', $file_name);
-            $this->merge(['dp' => $file_path]);
-        }
-    }
+    // protected function passedValidation()
+    // {
+    //     if (request()->hasFile('dp')) {
+    //         $file_name = time() . '_' . request()->file('dp')->getClientOriginalName();
+    //         $file_path = request()->file('dp')->storeAs('dp', $file_name);
+    //         $this->merge(['dp' => $file_path]);
+    //     }
+    // }
 }
