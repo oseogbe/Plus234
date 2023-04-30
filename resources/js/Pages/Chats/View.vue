@@ -15,7 +15,7 @@ import { Head } from "@inertiajs/vue3";
                 <h2
                     class="px-5 text-lg font-medium text-gray-800 dark:text-white"
                 >
-                    Accounts
+                    Chats
                 </h2>
 
                 <div class="mt-8 space-y-4">

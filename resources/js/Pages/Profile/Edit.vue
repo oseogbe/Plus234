@@ -1,9 +1,9 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import DeleteUserForm from './Partials/DeleteUserForm.vue';
-import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
-import { Head } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
+import DeleteUserForm from "./Partials/DeleteUserForm.vue";
+import UpdatePasswordForm from "./Partials/UpdatePasswordForm.vue";
+import UpdateProfileInformationForm from "./Partials/UpdateProfileInformationForm.vue";
+import { Head } from "@inertiajs/vue3";
 
 defineProps({
     mustVerifyEmail: {
@@ -18,13 +18,17 @@ defineProps({
 <template>
     <Head title="Profile" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>
-        </template>
+    <MainLayout>
+        <div class="py-8">
+            <header class="mb-8">
+                <h2 class="px-5 text-lg font-medium text-gray-900">Settings</h2>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <p class="px-5 mt-1 text-sm text-gray-600">
+                    Would like to make some updates to your profile?
+                </p>
+            </header>
+
+            <div class="grid grid-cols-2 gap-4 mx-5 sm:pr-6 lg:pr-8">
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <UpdateProfileInformationForm
                         :must-verify-email="mustVerifyEmail"
@@ -33,14 +37,16 @@ defineProps({
                     />
                 </div>
 
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <UpdatePasswordForm class="max-w-xl" />
-                </div>
+                <div class="space-y-6">
+                    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                        <UpdatePasswordForm class="max-w-xl" />
+                    </div>
 
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <DeleteUserForm class="max-w-xl" />
+                    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                        <DeleteUserForm class="max-w-xl" />
+                    </div>
                 </div>
             </div>
         </div>
-    </AuthenticatedLayout>
+    </MainLayout>
 </template>
