@@ -10,6 +10,9 @@ module.exports = {
     ],
 
     theme: {
+        screens: {
+            'sm': '576px',
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

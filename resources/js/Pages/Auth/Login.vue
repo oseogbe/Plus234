@@ -1,10 +1,10 @@
 <script setup>
-import Checkbox from "@/Components/Checkbox.vue";
+import { ref } from "vue";
 import InputError from "@/Components/InputError.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
-import TextInput from "@/Components/TextInput.vue";
+import PasswordRecovery from "@/Components/PasswordRecovery.vue";
 import { Head, Link, useForm } from "@inertiajs/vue3";
+
+let showPasswordRecovery = ref(false);
 
 defineProps({
     canResetPassword: {
@@ -31,64 +31,6 @@ const submit = () => {
 <template>
     <Head title="Login" />
 
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
-    </div>
-
-    <!-- <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="current-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    v-if="canResetPassword"
-                    :href="route('password.request')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Forgot your password?
-                </Link>
-
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </PrimaryButton>
-            </div>
-        </form> -->
-
     <div class="h-screen flex flex-wrap justify-between">
         <div class="w-full bg-white basis-[100%] sm:basis-[30%] pt-12 sm:pt-20">
             <div class="px-[5%] sm:px-[10%]">
@@ -104,6 +46,12 @@ const submit = () => {
                         Sign in
                     </h2>
                     <div class="my-9">
+                        <div
+                            v-if="status"
+                            class="mb-4 font-medium text-sm text-green-600"
+                        >
+                            {{ status }}
+                        </div>
                         <form @submit.prevent="submit">
                             <div class="mb-4">
                                 <label for="email" class="font-medium">
@@ -113,6 +61,7 @@ const submit = () => {
                                         id="email"
                                         v-model="form.email"
                                         class="w-full h-[50px] p-[10px] border border-solid border-[#e4e5e7] focus:border-0 focus:ring-gray-500 text-[#222325] tracking-[0.57px] outline-none rounded"
+                                        required
                                     />
                                 </label>
                                 <InputError
@@ -128,6 +77,7 @@ const submit = () => {
                                         id="password"
                                         v-model="form.password"
                                         class="w-full h-[50px] p-[10px] border border-solid border-[#e4e5e7] focus:border-0 focus:ring-gray-500 text-[#222325] tracking-[0.57px] outline-none rounded"
+                                        required
                                     />
                                 </label>
                                 <InputError
@@ -135,13 +85,17 @@ const submit = () => {
                                     :message="form.errors.password"
                                 />
                                 <div class="mt-4 text-sm">
-                                    <Link
+                                    <div
                                         v-if="canResetPassword"
-                                        :href="route('password.request')"
-                                        class="text-sm text-gray-600 hover:text-gray-900"
+                                        @click="showPasswordRecovery = true"
+                                        class="text-sm text-gray-600 hover:text-gray-900 cursor-pointer"
                                     >
                                         Forgot your password?
-                                    </Link>
+                                    </div>
+                                    <password-recovery
+                                        v-show="showPasswordRecovery"
+                                        @closeModal="showPasswordRecovery = false"
+                                    />
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -172,8 +126,8 @@ const submit = () => {
                         <Link
                             :href="route('register')"
                             class="text-gray-500 hover:text-gray-900 tracking-[0.23px] leading-6 underline"
-                            >Join now</Link
-                        >
+                            >Join now
+                        </Link>
                     </div>
                 </div>
             </div>
