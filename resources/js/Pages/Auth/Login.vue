@@ -60,7 +60,6 @@ const submit = () => {
                                         type="email"
                                         id="email"
                                         v-model="form.email"
-                                        class="w-full h-[50px] p-[10px] border border-solid border-[#e4e5e7] focus:border-0 focus:ring-gray-500 text-[#222325] tracking-[0.57px] outline-none rounded"
                                         required
                                     />
                                 </label>
@@ -76,7 +75,6 @@ const submit = () => {
                                         type="password"
                                         id="password"
                                         v-model="form.password"
-                                        class="w-full h-[50px] p-[10px] border border-solid border-[#e4e5e7] focus:border-0 focus:ring-gray-500 text-[#222325] tracking-[0.57px] outline-none rounded"
                                         required
                                     />
                                 </label>
@@ -106,14 +104,13 @@ const submit = () => {
                                             id="checkbox"
                                             name="remember"
                                             v-model="form.remember"
-                                            class="rounded-[4px] focus:ring-0 text-gray-500"
                                         />
                                     </span>
                                     Remember me
                                 </label>
                             </div>
                             <button
-                                class="bg-gray-500 border-2 border-gray-500 w-full h-12 rounded cursor-pointer flex items-center justify-center text-white text-base font-semibold leading-6 outline-none transition duration-200 ease-in-out select-none"
+                                class="btn-primary"
                                 :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing"
                             >

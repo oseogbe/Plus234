@@ -1,6 +1,6 @@
 <script setup>
-import InputError from '@/Components/InputError.vue';
-import { useForm } from '@inertiajs/vue3';
+import InputError from "@/Components/InputError.vue";
+import { useForm } from "@inertiajs/vue3";
 
 defineProps({
     status: {
@@ -11,11 +11,11 @@ defineProps({
 const emit = defineEmits(["closeModal"]);
 
 const form = useForm({
-    email: '',
+    email: "",
 });
 
 const submit = () => {
-    form.post(route('password.email'));
+    form.post(route("password.email"));
 };
 </script>
 
@@ -32,12 +32,15 @@ const submit = () => {
                     class="w-full bg-gray-500 h-1 ml-[-1px] rounded-tl-[3px] rounded-tr-[3px]"
                 ></div>
                 <div class="flex flex-col p-10">
-                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                    <div
+                        v-if="status"
+                        class="mb-4 font-medium text-sm text-green-600"
+                    >
                         {{ status }}
                     </div>
                     <button
                         @click="emit('closeModal')"
-                        class="w-8 h-8 flex justify-center items-center bg-transparent hover:bg-[#efeff0] border-0 rounded-[2px] cursor-pointer outline-none text-gray-400 hover:text-[#222325] absolute right-2 top-3"
+                        class="w-8 h-8 flex justify-center items-center bg-transparent hover:bg-[#efeff0] border-0 rounded-[2px] cursor-pointer focus:outline-none text-gray-400 hover:text-[#222325] absolute right-2 top-3"
                     >
                         <div
                             class="h-6 w-6 relative flex justify-center items-center"
@@ -74,30 +77,30 @@ const submit = () => {
                                     signed up for your account, and we’ll email
                                     you a link to reset your password.
                                 </p>
-                                <div class="pb-1">
-                                    <div class="w-full relative my-6">
-                                        <input
-                                            type="email"
-                                            class="w-full bg-white border border-[#e4e5e7] rounded-[1px] box-border text-[#222325] h-[50px] px-2.5 focus:border-0 focus:ring-gray-500 tracking-[0.57px] outline-none"
-                                            placeholder="Email"
-                                            v-model="form.email"
-                                            required
-                                        />
-                                        <InputError
-                                            class="mt-2"
-                                            :message="form.errors.email"
-                                        />
-                                    </div>
-                                    <!-- <div class="recaptcha-area"></div> -->
-                                    <div>
-                                        <button
-                                            class="w-full h-[42px] relative cursor-pointer bg-gray-500 border-transparent rounded font-semibold text-base text-white text-center flex justify-center items-center transition outline-none select-none"
-                                            :class="{ 'opacity-25': form.processing }"
-                                            :disabled="form.processing"
-                                        >
-                                            Send reset link
-                                        </button>
-                                    </div>
+                                <div class="w-full relative my-6">
+                                    <input
+                                        type="email"
+                                        class=""
+                                        placeholder="Email"
+                                        v-model="form.email"
+                                        required
+                                    />
+                                    <InputError
+                                        class="mt-2"
+                                        :message="form.errors.email"
+                                    />
+                                </div>
+                                <!-- <div class="recaptcha-area"></div> -->
+                                <div>
+                                    <button
+                                        class="w-full h-[42px] relative cursor-pointer bg-gray-500 border-transparent rounded font-semibold text-base text-white text-center flex justify-center items-center transition focus:outline-none select-none"
+                                        :class="{
+                                            'opacity-25': form.processing,
+                                        }"
+                                        :disabled="form.processing"
+                                    >
+                                        Send reset link
+                                    </button>
                                 </div>
                             </form>
                         </div>

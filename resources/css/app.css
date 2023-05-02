@@ -2,10 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-.sidebar-link {
-    @apply p-1.5 text-gray-500 focus:outline-none transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100;
+@layer base {
+    [type="text"],
+    [type="email"],
+    [type="url"],
+    [type="password"],
+    [type="number"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="search"],
+    [type="tel"],
+    [type="time"],
+    [type="week"],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full h-[50px] px-2.5 border border-solid border-[#e4e5e7] box-border focus:border-0 focus:ring-gray-500 text-[#222325] tracking-[0.57px] focus:outline-none rounded;
+    }
+
+    [type="checkbox"],
+    [type="radio"] {
+        @apply rounded border-[#e4e5e7] text-gray-500 focus:ring-0;
+    }
 }
 
-.sidebar-link__active {
-    @apply p-1.5 text-blue-500 transition-colors duration-200 bg-blue-100 rounded-lg dark:text-blue-400 dark:bg-gray-800;
+@layer components {
+    .btn-primary {
+        @apply bg-gray-500 border-2 border-gray-500 w-full h-12 rounded cursor-pointer flex items-center justify-center text-white text-base font-semibold focus:outline-none transition duration-200 ease-in-out select-none;
+    }
+
+    .sidebar-link {
+        @apply p-1.5 text-gray-500 focus:outline-none transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100;
+    }
+
+    .sidebar-link__active {
+        @apply p-1.5 text-blue-500 transition-colors duration-200 bg-blue-100 rounded-lg dark:text-blue-400 dark:bg-gray-800;
+    }
 }
