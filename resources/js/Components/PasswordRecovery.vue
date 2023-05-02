@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
 import InputError from "@/Components/InputError.vue";
 import { useForm } from "@inertiajs/vue3";
 
@@ -9,6 +11,10 @@ defineProps({
 });
 
 const emit = defineEmits(["closeModal"]);
+
+const modal = ref(null);
+
+onClickOutside(modal, (event) => emit("closeModal"));
 
 const form = useForm({
     email: "",
@@ -31,7 +37,7 @@ const submit = () => {
                 <div
                     class="w-full bg-gray-500 h-1 ml-[-1px] rounded-tl-[3px] rounded-tr-[3px]"
                 ></div>
-                <div class="flex flex-col p-10">
+                <div class="flex flex-col p-10" ref="modal">
                     <div
                         v-if="status"
                         class="mb-4 font-medium text-sm text-green-600"
@@ -39,6 +45,7 @@ const submit = () => {
                         {{ status }}
                     </div>
                     <button
+                        type="button"
                         @click="emit('closeModal')"
                         class="w-8 h-8 flex justify-center items-center bg-transparent hover:bg-[#efeff0] border-0 rounded-[2px] cursor-pointer focus:outline-none text-gray-400 hover:text-[#222325] absolute right-2 top-3"
                     >

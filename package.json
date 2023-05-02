@@ -17,6 +17,9 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@vueuse/components": "^10.1.2",
+        "@vueuse/core": "^10.1.2",
+        "daisyui": "^2.51.6",
         "filepond": "^4.30.4",
         "filepond-plugin-file-validate-type": "^1.2.8",
         "filepond-plugin-image-preview": "^4.6.11",

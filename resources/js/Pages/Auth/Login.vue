@@ -97,7 +97,7 @@ const submit = () => {
                                 </div>
                             </div>
                             <div class="mb-4">
-                                <label for="checkbox" class="text-sm">
+                                <!-- <label for="checkbox" class="text-sm">
                                     <span>
                                         <input
                                             type="checkbox"
@@ -107,6 +107,19 @@ const submit = () => {
                                         />
                                     </span>
                                     Remember me
+                                </label> -->
+                                <label class="cursor-pointer">
+                                    <span class="label-text mr-4"
+                                        >Remember me</span
+                                    >
+                                    <input
+                                        id="checkbox"
+                                        name="remember"
+                                        v-model="form.remember"
+                                        type="checkbox"
+                                        class="toggle"
+                                        checked
+                                    />
                                 </label>
                             </div>
                             <button
