@@ -10,12 +10,18 @@ module.exports = {
     ],
 
     theme: {
-        screens: {
-            'sm': '576px',
-        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+            screens: {
+                'sm': '576px',
+            },
+            colors: {
+                primary: '#4ADE80',
+                secondary: '#FFBF00',
+                myPurple: '#9C67E8',
+                myGray: '#6B7280'
             },
         },
     },

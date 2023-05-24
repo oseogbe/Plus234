@@ -5,16 +5,16 @@ import { Link } from "@inertiajs/vue3";
 <template>
     <div class="flex">
         <div
-            class="flex flex-col justify-between w-16 h-screen py-8 bg-white dark:bg-gray-900 dark:border-gray-700"
+            class="flex flex-col justify-between fixed w-16 h-screen py-8 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
             <div class="flex flex-col items-center space-y-8">
-                <a href="#">
+                <Link :href="route('welcome')">
                     <img
                         class="w-12 h-auto"
                         src="/img/plus234/logo.png"
                         alt="plus234 logo"
                     />
-                </a>
+                </Link>
 
                 <Link
                     :href="route('dashboard')"
@@ -152,7 +152,10 @@ import { Link } from "@inertiajs/vue3";
                 </div>
             </Link>
         </div>
-        <slot />
+        <div class="pl-16">
+            <slot />
+
+        </div>
     </div>
 </template>
 

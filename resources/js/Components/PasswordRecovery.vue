@@ -35,7 +35,7 @@ const submit = () => {
                 class="w-[510px] relative bg-white box-border shadow-md border border-gray-200 border-t-0 rounded-[3px]"
             >
                 <div
-                    class="w-full bg-gray-500 h-1 ml-[-1px] rounded-tl-[3px] rounded-tr-[3px]"
+                    class="w-full bg-primary h-1 ml-[-1px] rounded-tl-[3px] rounded-tr-[3px]"
                 ></div>
                 <div class="flex flex-col p-10" ref="modal">
                     <div
@@ -100,7 +100,7 @@ const submit = () => {
                                 <!-- <div class="recaptcha-area"></div> -->
                                 <div>
                                     <button
-                                        class="w-full h-[42px] relative cursor-pointer bg-gray-500 border-transparent rounded font-semibold text-base text-white text-center flex justify-center items-center transition focus:outline-none select-none"
+                                        class="w-full h-[42px] relative cursor-pointer bg-primary border-transparent rounded font-semibold text-base text-white text-center flex justify-center items-center transition focus:outline-none select-none"
                                         :class="{
                                             'opacity-25': form.processing,
                                         }"

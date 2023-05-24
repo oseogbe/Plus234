@@ -34,11 +34,13 @@ const submit = () => {
     <div class="h-screen flex flex-wrap justify-between">
         <div class="w-full bg-white basis-[100%] sm:basis-[30%] pt-12 sm:pt-20">
             <div class="px-[5%] sm:px-[10%]">
-                <img
-                    src="/img/plus234/logo-alt.png"
-                    alt="Plus234 logo"
-                    class="w-40 mx-auto mb-7 sm:mb-14"
-                />
+                <Link :href="route('welcome')">
+                    <img
+                        src="/img/plus234/logo-alt.png"
+                        alt="Plus234 logo"
+                        class="w-40 mx-auto mb-7 sm:mb-14"
+                    />
+                </Link>
                 <div class="register-body">
                     <h2
                         class="mb-6 text-2xl leading-8 font-semibold tracking-[0.2px]"
@@ -92,7 +94,9 @@ const submit = () => {
                                     </div>
                                     <password-recovery
                                         v-show="showPasswordRecovery"
-                                        @closeModal="showPasswordRecovery = false"
+                                        @closeModal="
+                                            showPasswordRecovery = false
+                                        "
                                     />
                                 </div>
                             </div>
@@ -135,13 +139,13 @@ const submit = () => {
                         <span class="pr-[3px]">Don't have an account?</span>
                         <Link
                             :href="route('register')"
-                            class="text-gray-500 hover:text-gray-900 tracking-[0.23px] leading-6 underline"
+                            class="text-primary tracking-[0.23px] leading-6 underline"
                             >Join now
                         </Link>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hidden sm:block basis-[70%] bg-gray-500"></div>
+        <div class="hidden sm:block basis-[70%] bg-gradient-to-r from-green-400 to-purple-500"></div>
     </div>
 </template>
