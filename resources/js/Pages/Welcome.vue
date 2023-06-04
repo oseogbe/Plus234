@@ -5,14 +5,49 @@ import { Head, Link } from "@inertiajs/vue3";
 <template>
     <Head title="Let's Connect" />
 
-    <div>
-        <section class="pt-24 bg-white">
+    <div class="selection:bg-transparent">
+        <div class="flex justify-center">
+            <div class="navbar fixed bg-base-100 max-w-7xl pt-8">
+                <div class="navbar-start">
+                    <div class="dropdown -mt-2">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-lg md:text-xl">
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">features</a></li>
+                            <li><a href="#">contact</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost hover:bg-transparent">
+                        <Link :href="route('welcome')">
+                            <img
+                                src="/img/plus234/logo-alt.png"
+                                alt="Plus234 logo"
+                                class="w-36 mx-auto mb-7 sm:mb-14"
+                            />
+                        </Link>
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-lg md:text-xl">
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">features</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end -mt-2">
+                    <Link :href="route('login')" class="btn min-h-[2.5rem] h-[2.5rem] lg:min-h-12 bg-primary border-0 hover:bg-primary">Login</Link>
+                </div>
+            </div>
+        </div>
+        <section class="pt-48 bg-white">
             <div class="px-12 mx-auto max-w-7xl">
                 <div
                     class="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center"
                 >
                     <h1
-                        class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight"
+                        class="text-[2.0rem] text-center font-extrabold leading-none tracking-normal text-gray-900 lg:text-6xl md:tracking-tight"
                     >
                         <span>Share </span>
                         <span class="text-gradient">your passions </span>
@@ -21,7 +56,7 @@ import { Head, Link } from "@inertiajs/vue3";
                         <span>platforms.</span>
                     </h1>
                     <p
-                        class="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24"
+                        class="px-0 mt-8 mb-8 text-gray-600 md:text-xl lg:px-24"
                     >
                         Start gaining the traction you've always wanted with our
                         next-level templates and designs. Crafted to help you
