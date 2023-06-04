@@ -1,6 +1,8 @@
 <script setup>
-import MainLayout from "@/Layouts/MainLayout.vue";
 import { Head } from "@inertiajs/vue3";
+import MainLayout from "@/Layouts/MainLayout.vue";
+import SummaryCards from "@/Components/Dashboard/SummaryCards.vue";
+import EventsTable from "@/Components/Dashboard/EventsTable.vue";
 </script>
 
 <template>
@@ -20,6 +22,12 @@ import { Head } from "@inertiajs/vue3";
                         </p>
                     </header>
                 </section>
+
+                <div class="w-full px-5 mx-auto space-y-16">
+                    <SummaryCards />
+
+                    <EventsTable />
+                </div>
             </div>
         </div>
     </MainLayout>
