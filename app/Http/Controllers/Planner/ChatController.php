@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Planner;
 
+use App\Http\Controllers\Controller;
 use App\Events\SendPrivateMessageEvent;
 use App\Http\Resources\ChatResourceCollection;
 use App\Http\Resources\MessageResource;
@@ -14,16 +15,11 @@ use Illuminate\Http\Request;
 
 class ChatController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $chats = (new ChatResourceCollection(auth()->user()->chats, auth()->id()))
                     ->jsonSerialize();
-        return inertia('Chats/View', compact('chats'));
+        return inertia('Planner/Chats/View', compact('chats'));
     }
 
     public function inviteToChat(Request $request)

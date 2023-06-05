@@ -33,7 +33,7 @@ class SendPrivateMessageEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel("chatme.{$this->chat_id}"),
+            new PrivateChannel(config('app.name').".{$this->chat_id}"),
         ];
     }
 

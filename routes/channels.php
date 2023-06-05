@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('chatme.{chat_id}', function ($user, $chat_id) {
+Broadcast::channel(config('app.name').'.{chat_id}', function ($user, $chat_id) {
     return true;
 });

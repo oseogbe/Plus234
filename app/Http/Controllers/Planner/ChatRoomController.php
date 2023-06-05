@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Planner;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateChatRoomRequest;
 use App\Models\ChatRoom;
-use Illuminate\Http\Request;
 
 class ChatRoomController extends Controller
 {

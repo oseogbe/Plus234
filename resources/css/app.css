@@ -43,6 +43,6 @@
 
 @layer utilities {
     .text-gradient {
-        @apply block w-full py-2 text-transparent bg-clip-text leading-[48px] bg-gradient-to-r from-green-400 to-purple-500 lg:inline;
+        @apply text-transparent bg-clip-text leading-[48px] bg-gradient-to-r from-green-400 to-purple-500;
     }
 }

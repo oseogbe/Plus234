@@ -32,7 +32,7 @@ class SendMessageEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new Channel("chatme"),
+            new Channel(config('app.name')),
         ];
     }
 
