@@ -37,7 +37,10 @@ import { Head, Link } from "@inertiajs/vue3";
                     </ul>
                 </div>
                 <div class="navbar-end -mt-2">
-                    <Link :href="route('login')" class="btn min-h-[2.5rem] h-[2.5rem] lg:min-h-12 bg-primary border-0 hover:bg-primary">Login</Link>
+                    <Link :href="route('login')" class="btn min-h-[2.5rem] h-[2.5rem] lg:min-h-12 bg-primary border-0 hover:bg-primary">
+                        <span class="mr-1">Login</span>
+                        <img class="w-5 h-5 white-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHN0eWxlPi5he2ZpbGw6Izk4YTJiODt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmljb24tc2lnbi1pbjwvdGl0bGU+PHBhdGggY2xhc3M9ImEiIGQ9Ik0xNy41MywyLjY3SDEzLjhhLjk0Ljk0LDAsMCwwLS45NC45M2gwYS45NC45NCwwLDAsMCwuOTQuOTRoMy43M2EuOTIuOTIsMCwwLDEsLjkzLjkzaDBWMTguNTNhLjkyLjkyLDAsMCwxLS45My45M0gxMy44YS45NC45NCwwLDAsMC0uOTQuOTRoMGEuOTQuOTQsMCwwLDAsLjk0LjkzaDMuNzNhMi44LDIuOCwwLDAsMCwyLjgtMi44VjUuNDdhMi44LDIuOCwwLDAsMC0yLjgtMi44WiIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNMTQuNjYsMTIuMzZhLjk0Ljk0LDAsMCwwLS4yLTFMOS43OSw2LjY3QS45My45MywwLDEsMCw4LjQ3LDhsMy4wOCwzLjA3aC05YS45NC45NCwwLDAsMC0uOTMuOTRoMGEuOTMuOTMsMCwwLDAsLjkzLjkzaDlMOC40NywxNmEuOTQuOTQsMCwwLDAsMCwxLjMyLjkzLjkzLDAsMCwwLC42Ni4yNy45LjksMCwwLDAsLjY2LS4yN2w0LjY3LTQuNjdBMSwxLDAsMCwwLDE0LjY2LDEyLjM2WiIvPjwvc3ZnPgo=" alt="">
+                    </Link>
                 </div>
             </div>
         </div>
@@ -132,4 +135,8 @@ import { Head, Link } from "@inertiajs/vue3";
     </div>
 </template>
 
-<style></style>
+<style scoped>
+.white-icon {
+    filter: brightness(0) invert(1);
+}
+</style>

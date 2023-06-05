@@ -1,12 +1,10 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import MainLayout from "@/Layouts/MainLayout.vue";
-import SummaryCards from "@/Components/Dashboard/SummaryCards.vue";
-import EventsTable from "@/Components/Dashboard/EventsTable.vue";
+import { Head } from "@inertiajs/vue3";
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Events" />
 
     <MainLayout>
         <div class="py-8">
@@ -14,19 +12,17 @@ import EventsTable from "@/Components/Dashboard/EventsTable.vue";
                 <section>
                     <header>
                         <h2 class="text-lg px-5 font-medium text-gray-900">
-                            Dashboard
+                            Events
                         </h2>
 
                         <p class="mt-1 px-5 text-sm text-gray-600">
-                            What would you like to do today on Plus234?
+                            Plan and share your events across social media
                         </p>
                     </header>
                 </section>
 
                 <div class="w-full px-5 mx-auto space-y-16">
-                    <SummaryCards />
 
-                    <EventsTable />
                 </div>
             </div>
         </div>

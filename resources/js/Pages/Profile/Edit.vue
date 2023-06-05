@@ -28,7 +28,7 @@ defineProps({
                 </p>
             </header>
 
-            <div class="grid grid-cols-2 gap-4 mx-5 sm:pr-6 lg:pr-8">
+            <div class="grid md:grid-cols-2 gap-4 mx-5 sm:pr-6 lg:pr-8">
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <UpdateProfileInformationForm
                         :must-verify-email="mustVerifyEmail"

@@ -3,9 +3,9 @@ import { Link } from "@inertiajs/vue3";
 </script>
 
 <template>
-    <div class="flex">
+    <div class="flex selection:bg-none">
         <div
-            class="flex flex-col justify-between fixed w-16 h-screen py-8 bg-white dark:bg-gray-900 dark:border-gray-700"
+            class="hidden lg:flex flex-col justify-between fixed w-16 h-screen py-8 bg-white dark:bg-gray-900 dark:border-gray-700"
         >
             <div class="flex flex-col items-center space-y-8">
                 <Link :href="route('welcome')">
@@ -19,7 +19,7 @@ import { Link } from "@inertiajs/vue3";
                 <Link
                     :href="route('dashboard')"
                     :class="
-                        $page.component === 'Dashboard'
+                        $page.component === 'Planner/Dashboard/Index'
                             ? 'sidebar-link__active'
                             : 'sidebar-link'
                     "
@@ -41,9 +41,34 @@ import { Link } from "@inertiajs/vue3";
                 </Link>
 
                 <Link
+                    :href="route('events')"
+                    :class="
+                        $page.component === 'Planner/Events/Index'
+                            ? 'sidebar-link__active'
+                            : 'sidebar-link'
+                    "
+                >
+                    <svg
+                        class="w-5 h-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"
+                        />
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                        />
+                    </svg>
+                </Link>
+
+                <Link
                     :href="route('chats')"
                     :class="
-                        $page.component === 'Chats/View'
+                        $page.component === 'Planner/Chats/View'
                             ? 'sidebar-link__active'
                             : 'sidebar-link'
                     "
@@ -63,28 +88,6 @@ import { Link } from "@inertiajs/vue3";
                         />
                     </svg>
                 </Link>
-
-                <a href="#" class="sidebar-link">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-6 h-6"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
-                        />
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
-                        />
-                    </svg>
-                </a>
 
                 <a href="#" class="sidebar-link">
                     <svg
@@ -152,9 +155,8 @@ import { Link } from "@inertiajs/vue3";
                 </div>
             </Link>
         </div>
-        <div class="pl-16">
+        <div class="w-full lg:w-auto lg:pl-16">
             <slot />
-
         </div>
     </div>
 </template>

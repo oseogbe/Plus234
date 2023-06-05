@@ -224,7 +224,7 @@
                     <p
                         class="text-xs uppercase tracking-wide text-gray-500"
                     >
-                        Pageviews
+                        Page views
                     </p>
                     <div class="mt-1 flex items-center gap-x-1">
                         <h3
