@@ -23,6 +23,7 @@
         "filepond": "^4.30.4",
         "filepond-plugin-file-validate-type": "^1.2.8",
         "filepond-plugin-image-preview": "^4.6.11",
+        "preline": "^1.8.0",
         "vue-filepond": "^7.0.3"
     }
 }

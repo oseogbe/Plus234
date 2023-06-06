@@ -31,7 +31,7 @@ const submit = () => {
 <template>
     <Head title="Login" />
 
-    <div class="h-screen flex flex-wrap justify-between">
+    <div class="h-screen flex flex-wrap justify-between selection:bg-none">
         <div class="w-full bg-white basis-[100%] sm:basis-[30%] pt-12 sm:pt-20">
             <div class="px-[5%] sm:px-[10%]">
                 <Link :href="route('welcome')">
@@ -101,28 +101,15 @@ const submit = () => {
                                 </div>
                             </div>
                             <div class="mb-4">
-                                <!-- <label for="checkbox" class="text-sm">
-                                    <span>
-                                        <input
-                                            type="checkbox"
-                                            id="checkbox"
-                                            name="remember"
-                                            v-model="form.remember"
-                                        />
-                                    </span>
-                                    Remember me
-                                </label> -->
-                                <label class="cursor-pointer">
-                                    <span class="label-text mr-4"
+                                <label class="remember-me">
+                                    <span class="label-text cursor-pointer mr-4"
                                         >Remember me</span
                                     >
                                     <input
-                                        id="checkbox"
-                                        name="remember"
+                                        id="remember-me"
                                         v-model="form.remember"
                                         type="checkbox"
-                                        class="toggle"
-                                        checked
+                                        class="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-primary checked:hover:bg-primary checked:focus:bg-primary focus:ring-primary rounded-full cursor-pointer transition-colors ease-in-out duration-200 border border-transparent ring-1 ring-transparent ring-offset-white focus:outline-none appearance-none before:inline-block before:w-6 before:h-6 before:bg-white before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200"
                                     />
                                 </label>
                             </div>
@@ -146,6 +133,8 @@ const submit = () => {
                 </div>
             </div>
         </div>
-        <div class="hidden sm:block basis-[70%] bg-gradient-to-r from-green-400 to-purple-500"></div>
+        <div
+            class="hidden sm:block basis-[70%] bg-gradient-to-r from-green-400 to-purple-500"
+        ></div>
     </div>
 </template>

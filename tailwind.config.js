@@ -7,6 +7,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        'node_modules/preline/dist/*.js',
     ],
 
     theme: {
@@ -28,6 +29,7 @@ module.exports = {
 
     plugins: [
         require('@tailwindcss/forms'),
-        require('daisyui')
+        require('daisyui'),
+        require('preline/plugin'),
     ],
 };

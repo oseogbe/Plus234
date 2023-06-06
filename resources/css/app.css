@@ -21,7 +21,6 @@
         @apply w-full h-[50px] px-2.5 border border-solid border-[#e4e5e7] box-border focus:border-0 focus:ring-primary text-[#222325] tracking-[0.57px] focus:outline-none rounded;
     }
 
-    [type="checkbox"],
     [type="radio"] {
         @apply rounded border-[#e4e5e7] text-primary focus:ring-0;
     }
