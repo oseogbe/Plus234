@@ -57,6 +57,26 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit');
     }
 
+    public function updateBankInfo(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'bank' => 'required|string',
+            'account_name' => 'required|string|regex:/^\w+(\s+\w+){1,2}$/',
+            'account_no' => 'required|numeric|digits:10'
+        ],[
+            'bank' => 'Please check the bank name you entered',
+            'bank.required' => 'Your bank name is required',
+            'account_name' => 'Please check the account name you entered',
+            'account_name.required' => 'Your account name is required',
+            'account_no' => 'Your account number is invalid',
+            'account_no.required' => 'Your account number is required',
+        ]);
+
+        $request->user()->update($validated);
+
+        return Redirect::route('profile.edit');
+    }
+
     /**
      * Delete the user's account.
      */

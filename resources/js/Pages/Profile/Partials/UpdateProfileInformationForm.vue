@@ -17,7 +17,7 @@ defineProps({
 const user = usePage().props.auth.user;
 
 const form = useForm({
-    name: user.name,
+    name: user.name ?? "",
     username: user.username,
     email: user.email,
     bio: user.bio ?? "",
@@ -36,12 +36,12 @@ const csrfToken = document
 
 const handleAddFile = (error, file) => {
     if (error) {
-        console.log("Error adding file: ", error);
+        // console.log("Error adding file: ", error);
         return;
     }
 
     form.dp = file.file;
-    console.log(form.dp);
+    // console.log(form.dp);
 };
 </script>
 
@@ -69,7 +69,6 @@ const handleAddFile = (error, file) => {
                     type="text"
                     class="mt-1 block w-full"
                     v-model="form.name"
-                    required
                     autocomplete="name"
                 />
 

@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ChatController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Planner\ChatController;
+use App\Http\Controllers\Planner\DashboardController;
+use App\Http\Controllers\Planner\EventController;
+use App\Http\Controllers\Planner\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -22,19 +22,21 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('welcome');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/chats', [ChatController::class, 'index'])->name('chats');
-});
+    Route::prefix('planner')->group(function () {
+        Route::middleware('verified')->group(function () {
+            Route::get('/events', [EventController::class, 'index'])->name('events');
+            Route::get('/chats', [ChatController::class, 'index'])->name('chats');
+        });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/upload-dp', [ProfileController::class, 'uploadDP'])->name('dp.upload');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::post('/upload-dp', [ProfileController::class, 'uploadDP'])->name('dp.upload');
+        Route::put('/bank-info', [ProfileController::class, 'updateBankInfo'])->name('bank-info.update');
+    });
 });
 
 
