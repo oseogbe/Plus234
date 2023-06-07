@@ -9,6 +9,26 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 // Preline
 import('preline');
 
+// FontAwesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+import {
+    faUpload,
+    faFileUpload,
+    faPlus,
+    faPlusCircle,
+    faMinusCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+    faUpload,
+    faFileUpload,
+    faPlus,
+    faPlusCircle,
+    faMinusCircle
+);
+
 // Import Vue FilePond
 import vueFilePond from "vue-filepond";
 
@@ -37,6 +57,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue, Ziggy)
             .component('file-pond', FilePond)
+            .component("font-awesome-icon", FontAwesomeIcon)
             .mount(el);
     },
     progress: {

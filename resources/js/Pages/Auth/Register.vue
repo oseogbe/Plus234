@@ -1,4 +1,5 @@
 <script setup>
+import Checkbox from "@/Components/Checkbox.vue";
 import InputError from "@/Components/InputError.vue";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 
@@ -103,11 +104,7 @@ const submit = () => {
                             <div class="mb-4">
                                 <label for="checkbox" class="text-sm">
                                     <span>
-                                        <input
-                                            type="checkbox"
-                                            id="checkbox"
-                                            v-model="form.checkbox"
-                                        />
+                                        <Checkbox v-model="form.checkbox" />
                                     </span>
                                     By providing us with your information you
                                     are consenting to the collection and use of

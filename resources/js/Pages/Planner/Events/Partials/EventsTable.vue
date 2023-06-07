@@ -1,4 +1,5 @@
 <script setup>
+import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { ref } from "vue";
 
 const events = ref([]);
@@ -30,19 +31,31 @@ const events = ref([]);
                                     scope="col"
                                     class="px-6 py-3 text-left text-sm font-medium text-gray-500"
                                 >
-                                    Location
+                                    Category
                                 </th>
                                 <th
                                     scope="col"
-                                    class="px-6 py-3 text-right text-sm font-medium text-gray-500"
+                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500"
                                 >
                                     Tags
                                 </th>
                                 <th
                                     scope="col"
-                                    class="px-6 py-3 text-right text-sm font-medium text-gray-500"
+                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500"
                                 >
-                                    Date/Time
+                                    Location
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500"
+                                >
+                                    Schedule(s)
+                                </th>
+                                <th
+                                    scope="col"
+                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500"
+                                >
+                                    Pricing(s)
                                 </th>
                             </tr>
                         </thead>
@@ -63,6 +76,16 @@ const events = ref([]);
                                         {{ event.description }}
                                     </td>
                                     <td
+                                        class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                                    >
+                                        {{ event.category }}
+                                    </td>
+                                    <td
+                                        class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                                    >
+
+                                    </td>
+                                    <td
                                         class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"
                                     >
                                         {{ event.location }}
@@ -70,19 +93,17 @@ const events = ref([]);
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                                     >
-                                        {{ event.tags }}
                                     </td>
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                                     >
-                                        {{ event.date }} {{ event.time }}
                                     </td>
                                 </tr>
                             </template>
                             <tr v-else>
-                                <td colspan="5">
+                                <td colspan="7">
                                     <div
-                                        class="min-h-[15rem] flex flex-col bg-white shadow-sm"
+                                        class="min-h-[24rem] flex flex-col bg-white shadow-sm"
                                     >
                                         <div
                                             class="flex flex-auto flex-col justify-center items-center p-4 md:p-5"
@@ -159,6 +180,14 @@ const events = ref([]);
                                             >
                                                 No events yet
                                             </p>
+                                            <div class="mt-5">
+                                                <PrimaryButton class="bg-[#9CA3AF] hover:bg-[#9CA3AF] focus:bg-[#9CA3AF] active:bg-[#9CA3AF] focus:ring-[#9CA3AF]">
+                                                    Create Event &nbsp;
+                                                    <font-awesome-icon
+                                                        icon="fa-solid fa-plus-circle"
+                                                    />
+                                                </PrimaryButton>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>

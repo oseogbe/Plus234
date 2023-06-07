@@ -12,13 +12,13 @@
                     <p
                         class="text-xs uppercase tracking-wide text-gray-500"
                     >
-                        Total users
+                        Total events
                     </p>
                     <div class="mt-1 flex items-center gap-x-1">
                         <h3
                             class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200"
                         >
-                            72,540
+                            0
                         </h3>
                         <span class="flex items-center text-green-600">
                             <svg
@@ -34,7 +34,7 @@
                                     d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
                                 />
                             </svg>
-                            <span class="inline-block text-lg"> 1.7% </span>
+                            <span class="inline-block text-lg"> 0.0% </span>
                         </span>
                     </div>
                 </div>
@@ -88,14 +88,109 @@
                     <p
                         class="text-xs uppercase tracking-wide text-gray-500"
                     >
-                        Sessions
+                        Content views
                     </p>
                     <div class="mt-1 flex items-center gap-x-1">
                         <h3
-                            class="mt-1 text-xl font-medium text-gray-800 dark:text-gray-200"
+                            class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200"
                         >
-                            29.4%
+                            0
                         </h3>
+                        <span class="flex items-center text-green-600">
+                            <svg
+                                class="inline-block w-7 h-7 self-center"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
+                                />
+                            </svg>
+                            <span class="inline-block text-lg"> 0.0% </span>
+                        </span>
+                    </div>
+                </div>
+                <div
+                    class="flex-shrink-0 flex justify-center items-center w-[46px] h-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
+                        />
+                        <path
+                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                        />
+                    </svg>
+                </div>
+            </div>
+
+            <a
+                class="py-3 px-4 md:px-5 inline-flex justify-between items-center bg-gray-50 text-sm text-gray-600 border-t border-gray-200 hover:bg-gray-50 rounded-b-xl dark:border-gray-700 dark:text-gray-400 dark:hover:bg-slate-800"
+                href="#"
+            >
+                View reports
+                <svg
+                    class="w-2.5 h-2.5"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                >
+                    <path
+                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </a>
+        </div>
+        <!-- End Card -->
+
+        <!-- Card -->
+        <div
+            class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800"
+        >
+            <div class="p-4 md:p-5 flex justify-between gap-x-3">
+                <div>
+                    <p
+                        class="text-xs uppercase tracking-wide text-gray-500"
+                    >
+                        Tickets sold
+                    </p>
+                    <div class="mt-1 flex items-center gap-x-1">
+                        <h3
+                            class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200"
+                        >
+                            0
+                        </h3>
+                        <span class="flex items-center text-green-600">
+                            <svg
+                                class="inline-block w-7 h-7 self-center"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
+                                />
+                            </svg>
+                            <span class="inline-block text-lg"> 0.0% </span>
+                        </span>
                     </div>
                 </div>
                 <div
@@ -148,13 +243,13 @@
                     <p
                         class="text-xs uppercase tracking-wide text-gray-500"
                     >
-                        Avg. Click Rate
+                        Revenue
                     </p>
                     <div class="mt-1 flex items-center gap-x-1">
                         <h3
                             class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200"
                         >
-                            56.8%
+                            &#8358; 0.00
                         </h3>
                         <span class="flex items-center text-red-600">
                             <svg
@@ -170,7 +265,7 @@
                                     d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
                                 />
                             </svg>
-                            <span class="inline-block text-lg"> 1.7% </span>
+                            <span class="inline-block text-lg"> 0.0% </span>
                         </span>
                     </div>
                 </div>
@@ -187,69 +282,6 @@
                     >
                         <path
                             d="M8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v5.34l-1.2.24a1.5 1.5 0 0 0-1.196 1.636l.345 3.106a2.5 2.5 0 0 0 .405 1.11l1.433 2.15A1.5 1.5 0 0 0 6.035 16h6.385a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002z"
-                        />
-                    </svg>
-                </div>
-            </div>
-
-            <a
-                class="py-3 px-4 md:px-5 inline-flex justify-between items-center bg-gray-50 text-sm text-gray-600 border-t border-gray-200 hover:bg-gray-50 rounded-b-xl dark:border-gray-700 dark:text-gray-400 dark:hover:bg-slate-800"
-                href="#"
-            >
-                View reports
-                <svg
-                    class="w-2.5 h-2.5"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                >
-                    <path
-                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                    />
-                </svg>
-            </a>
-        </div>
-        <!-- End Card -->
-
-        <!-- Card -->
-        <div
-            class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-800"
-        >
-            <div class="p-4 md:p-5 flex justify-between gap-x-3">
-                <div>
-                    <p
-                        class="text-xs uppercase tracking-wide text-gray-500"
-                    >
-                        Page views
-                    </p>
-                    <div class="mt-1 flex items-center gap-x-1">
-                        <h3
-                            class="mt-1 text-xl font-medium text-gray-800 dark:text-gray-200"
-                        >
-                            92,913
-                        </h3>
-                    </div>
-                </div>
-                <div
-                    class="flex-shrink-0 flex justify-center items-center w-[46px] h-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200"
-                >
-                    <svg
-                        class="w-4 h-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        viewBox="0 0 16 16"
-                    >
-                        <path
-                            d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
-                        />
-                        <path
-                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
                         />
                     </svg>
                 </div>

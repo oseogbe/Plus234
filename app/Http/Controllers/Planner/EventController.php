@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Planner;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateEventRequest;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -13,17 +14,8 @@ class EventController extends Controller
         return inertia('Planner/Events/Index', compact('events'));
     }
 
-    public function create(Request $request)
+    public function store(CreateEventRequest $request)
     {
-        $request->validate([
-            'category_id' => ['required', 'exists:categories,id'],
-            'name' => ['required', 'string'],
-            'description' => ['required', 'string'],
-            'location' => ['required', 'string'],
-            'tags' => ['required', 'array', 'max:5'],
-            'tags.*' => ['string'],
-            'poster' => ['required', 'image', 'mimes:png,jpg,jpeg'],
-            'post_at' => ['required', 'date'],
-        ]);
+        $validated = $request->validated();
     }
 }

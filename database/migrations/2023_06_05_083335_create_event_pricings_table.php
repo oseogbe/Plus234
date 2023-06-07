@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->decimal('cost', 12, 2);
-            $table->dateTime('payment_deadline')->nullable();
+            $table->dateTime('pay_before')->nullable();
             $table->timestamps();
         });
     }

@@ -27,8 +27,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('planner')->group(function () {
         Route::middleware('verified')->group(function () {
-            Route::get('/events', [EventController::class, 'index'])->name('events');
-            Route::get('/chats', [ChatController::class, 'index'])->name('chats');
+            Route::resource('events', EventController::class)->only('index', 'store');
+            Route::get('/chats', [ChatController::class, 'index'])->name('chats.index');
         });
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

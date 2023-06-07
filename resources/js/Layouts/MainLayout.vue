@@ -41,7 +41,7 @@ import { Link } from "@inertiajs/vue3";
                 </Link>
 
                 <Link
-                    :href="route('events')"
+                    :href="route('events.index')"
                     :class="
                         $page.component === 'Planner/Events/Index'
                             ? 'sidebar-link__active'
@@ -66,7 +66,7 @@ import { Link } from "@inertiajs/vue3";
                 </Link>
 
                 <Link
-                    :href="route('chats')"
+                    :href="route('chats.index')"
                     :class="
                         $page.component === 'Planner/Chats/View'
                             ? 'sidebar-link__active'
@@ -155,7 +155,8 @@ import { Link } from "@inertiajs/vue3";
                 </div>
             </Link>
         </div>
-        <div class="w-full lg:w-auto lg:pl-16">
+        <!-- <div class="w-full lg:w-auto lg:pl-16"> -->
+        <div class="w-full lg:pl-16">
             <slot />
         </div>
     </div>

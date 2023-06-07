@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\EventPlanner;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -16,9 +17,9 @@ class ProfileUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['string', 'max:255'],
-            'username' => ['string', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-            'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
+            'name' => ['nullable', 'string', 'max:255'],
+            'username' => ['string', 'max:255', Rule::unique(EventPlanner::class)->ignore($this->user()->id)],
+            'email' => ['email', 'max:255', Rule::unique(EventPlanner::class)->ignore($this->user()->id)],
             'bio' => ['nullable', 'string', 'max: 255'],
             'dp' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],
         ];
