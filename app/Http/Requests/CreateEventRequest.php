@@ -26,11 +26,13 @@ class CreateEventRequest extends FormRequest
             'category_id' => ['required', 'exists:categories,id'],
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'location' => ['required', 'string'],
             'tags' => ['required', 'array', 'max:5'],
             'tags.*' => ['string'],
             'poster' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
-            'post_at' => ['required', 'date'],
+            'locations' => ['required', 'array'],
+            'locations.*.address' => ['required', 'string'],
+            'locations.*.city' => ['required', 'string'],
+            'locations.*.state' => ['required', 'exists:states,id'],
             'schedule' => ['required', 'array'],
             'schedule.*.startdate' => ['required', 'date'],
             'schedule.*.enddate' => ['required', 'date'],
@@ -41,6 +43,7 @@ class CreateEventRequest extends FormRequest
             'pricings.*.description' => ['nullable', 'string'],
             'pricings.*.cost' => ['numeric'],
             'pricings.*.pay_before' => ['nullable', 'date', 'date_format:Y-m-d H:i:s'],
+            'post_at' => ['required', 'date'],
         ];
     }
 }

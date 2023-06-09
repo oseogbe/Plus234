@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignIdFor(Category::class);
             $table->string('name')->index();
             $table->text('description');
-            $table->tinyText('location');
             $table->json('tags');
             $table->string('poster')->nullable();
             $table->dateTime('post_at')->nullable();
