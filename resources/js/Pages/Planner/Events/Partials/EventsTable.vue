@@ -43,7 +43,7 @@ const events = ref([]);
                                     scope="col"
                                     class="px-6 py-3 text-left text-sm font-medium text-gray-500"
                                 >
-                                    Location
+                                    Location(s)
                                 </th>
                                 <th
                                     scope="col"
@@ -88,15 +88,17 @@ const events = ref([]);
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"
                                     >
-                                        {{ event.location }}
+
                                     </td>
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                                     >
+
                                     </td>
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                                     >
+
                                     </td>
                                 </tr>
                             </template>
@@ -181,7 +183,7 @@ const events = ref([]);
                                                 No events yet
                                             </p>
                                             <div class="mt-5">
-                                                <PrimaryButton class="bg-[#9CA3AF] hover:bg-[#9CA3AF] focus:bg-[#9CA3AF] active:bg-[#9CA3AF] focus:ring-[#9CA3AF]">
+                                                <PrimaryButton>
                                                     Create Event &nbsp;
                                                     <font-awesome-icon
                                                         icon="fa-solid fa-plus-circle"

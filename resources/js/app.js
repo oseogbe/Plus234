@@ -19,6 +19,8 @@ import {
     faPlus,
     faPlusCircle,
     faMinusCircle,
+    faLocationDot,
+    faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -26,7 +28,9 @@ library.add(
     faFileUpload,
     faPlus,
     faPlusCircle,
-    faMinusCircle
+    faMinusCircle,
+    faLocationDot,
+    faMapMarkerAlt
 );
 
 // Import Vue FilePond
